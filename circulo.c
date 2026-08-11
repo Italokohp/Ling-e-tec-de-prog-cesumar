@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
 	
 	raio = 4;
 
-	area = 3.14*2*raio;
+	area = 3.14*(raio*raio);
 	
 	printf("A area do circulo de raio %d eh %f", raio,area);
 	
