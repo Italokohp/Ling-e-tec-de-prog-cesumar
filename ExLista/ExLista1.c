@@ -4,7 +4,19 @@
 
 
 int main(int argc, char *argv[]) {
+
+	//1
+	int a,b;
+	scanf("%d %d", &a, &b);
+	printf("%d %d\n", b, a);
 	
+
+	//2
+	double c;
+	scanf("%lf", &c);
+	printf("%e\n", c);
+	
+
 	//3
 	int n, resultado, bit64, bit32, bit16, bit8, bit4, bit2, bit1;
 	
@@ -31,7 +43,6 @@ int main(int argc, char *argv[]) {
 	resultado /= 2;
 	
 	bit1 = resultado%2;
-	
 	
 	printf("O numero %d em binario eh %d%d%d%d%d%d%d\n", n, bit1, bit2, bit4, bit8, bit16, bit32, bit64);
 	
