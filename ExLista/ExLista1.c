@@ -8,13 +8,13 @@ int main(int argc, char *argv[]) {
 	//1
 	int a,b;
 	scanf("%d %d", &a, &b);
-	printf("%d %d\n", b, a);
+	printf("%d %d\n", b, a); //dois valores que se invertem
 	
 
 	//2
 	double c;
 	scanf("%lf", &c);
-	printf("%e\n", c);
+	printf("%e\n", c); //valor q se transforma em notação cientifica
 	
 
 	//3
