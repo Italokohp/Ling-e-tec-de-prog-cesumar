@@ -5,19 +5,19 @@
 
 int main(int argc, char *argv[]) {
 
-	//1
+	//ex1
 	int a,b;
 	scanf("%d %d", &a, &b);
 	printf("%d %d\n", b, a); //dois valores que se invertem
 	
 
-	//2
+	//ex2
 	double c;
 	scanf("%lf", &c);
 	printf("%e\n", c); //valor q se transforma em notação cientifica
 	
 
-	//3
+	//ex3
 	int n, resultado, bit64, bit32, bit16, bit8, bit4, bit2, bit1;
 	
 	printf("Digite o valor n\n");
@@ -45,7 +45,52 @@ int main(int argc, char *argv[]) {
 	bit1 = resultado%2;
 	
 	printf("O numero %d em binario eh %d%d%d%d%d%d%d\n", n, bit1, bit2, bit4, bit8, bit16, bit32, bit64);
+
+	//ex4
+	float salario, vendas, recebe;
 	
+	printf("Insira o salario\n");
+	scanf("%f", &salario);
+	
+	printf("Insira o valor total das vendas\n");
+	scanf("%f", &vendas);
+	
+	recebe = ((vendas*0.15) + salario);
+	printf("Total a receber = %.2f", recebe);
+	
+	
+	//ex5
+	int n1,n2,n3,n4;
+	
+	printf("Digite os 4 valores\n");
+	scanf("%d", &n1);
+	scanf("%d", &n2);
+	scanf("%d", &n3);
+	scanf("%d", &n4);
+	
+	printf("Soma = %d\n", n1+n2+n3+n4);
+	printf("Media = %d\n", (n1+n2+n3+n4)/4);
+	printf("Produtorio = %d", n1*n2*n3*n4);
+	
+	
+	//ex6
+	int idade;
+	
+	printf("Insira a idade: ");
+	scanf("%d", &idade);
+	
+	printf("%d Anos, %d Meses e %d Dias", idade, idade*12, idade*365);
+	
+	
+	//ex7
+	float pi, volume, raio;
+	pi = 3.14159;
+
+	printf("Digite o valor do raio\n");
+	scanf("%f", &raio);
+	
+	volume = ((4.0/3)*pi*(pow(raio, 3)));
+	printf("Volume = %f", volume);
 
 	//8
 	int x1,x2,y1,y2;
