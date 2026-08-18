@@ -92,7 +92,7 @@ int main(int argc, char *argv[]) {
 	volume = ((4.0/3)*pi*(pow(raio, 3)));
 	printf("Volume = %f", volume);
 
-	//8
+	//ex8
 	int x1,x2,y1,y2;
 	float diste;
 
