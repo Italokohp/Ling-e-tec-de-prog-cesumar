@@ -39,8 +39,8 @@ int main(int argc, char *argv[]) {
 	scanf("%d", &nu1);
 	
 	printf("Numero: %d\n", nu1);
-	printf("Antecessor: %d\n", ++nu1);
-	printf("Sucessor: %d", --nu1);
+	printf("Antecessor: %d\n", nu1-1);
+	printf("Sucessor: %d", nu1+1);
 	
 
 	//ex10
