@@ -57,7 +57,6 @@ int main(int argc, char *argv[]) {
 		calculonota = ((nota1+nota2+nota3)/3.0);
 		
 		if (calculonota >= 7.0){
-			system("Color 01");
 			printf("Aluno Aprovado\nMedia %f", calculonota);
 		}
 		else if (calculonota >= 4.0 && calculonota < 7.0){
