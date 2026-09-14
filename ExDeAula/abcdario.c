@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
 	
 			
 	switch (letra){   // testa os quatro casos e printa o texto certo, mais organizado q if else
-		case 'a':
+		case 'a': 
 			printf("a de AMOR");
 			break;
 		case 'b':
