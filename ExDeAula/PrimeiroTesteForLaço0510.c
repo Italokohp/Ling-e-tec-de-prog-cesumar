@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
 	int valores [10];
 	int maior, menor, i;
 	
-	printf("aaaaaaaaa\n");
+	printf("Insira 10 valores inteiros: \n");
 	//for(inicialização; verificação; incremento)
 	for( i=0; i<10; i++ ){
 		scanf("%d", &valores[i]);
