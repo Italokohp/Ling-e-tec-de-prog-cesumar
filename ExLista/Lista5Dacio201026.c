@@ -35,38 +35,66 @@ int primo (int a){
 
 
 int main(int argc, char *argv[]) {
-int valor_a[10], i;
-
-//ex1 incompleto
-
+//ex1
+printf("\n\n#EX1\n");
+int valor_ex1[10], i;
 for (i=0; i<10; i++){
 	printf("Insira o numero %d: ", i+1);
-	scanf("%d", &valor_a[i]);
+	scanf("%d", &valor_ex1[i]);
 } printf("-----------------------------------------------------\n");
 
 for (i=10; i>0; i--){
-	printf("Numero %d: %d\n", i, valor_a[i-1]);
+	printf("Numero %d: %d\n", i, valor_ex1[i-1]);
 } printf("-----------------------------------------------------\n");
 
 for (i=10; i>0; i=i-2){
 	double aux;
-	if (valor_a[i] > valor_a[i+1]){
-		aux = valor_a[i+1];
-		valor_a[i+1] = valor_a[i];
-		valor_a[i] = aux;
+	if (valor_ex1[i] > valor_ex1[i+1]){
+		aux = valor_ex1[i+1];
+		valor_ex1[i+1] = valor_ex1[i];
+		valor_ex1[i] = aux;
 	}
-	else if (valor_a[i+1] > valor_a[i]){
-		aux = valor_a[i];
-		valor_a[i] = valor_a[i+1];
-		valor_a[i+1] = aux;
+	else if (valor_ex1[i+1] > valor_ex1[i]){
+		aux = valor_ex1[i];
+		valor_ex1[i] = valor_ex1[i+1];
+		valor_ex1[i+1] = aux;
 	}
-	printf("Numero %d: %d\nNumero %d: %d\n", i, valor_a[i], i-1, valor_a[i+1]);
+	printf("Numero %d: %d\nNumero %d: %d\n", i, valor_ex1[i], i-1, valor_ex1[i+1]);
 
 }
 //
 
 
 
+	
+//ex2
+printf("\n\n#EX2\n");
+double valor_ex2;
+int expoente = 0;
+printf("Insira um valor para ser convertido em notacao cientifica: ");
+scanf("%lf", &valor_ex2);
+
+	
+	while (valor_ex2 >= 10.0){
+		valor_ex2 = valor_ex2/10.0;
+		expoente++;
+	}
+	while (valor_ex2 < 1.0){
+		valor_ex2 = valor_ex2*10.0;
+		expoente--;
+	}
+	if (valor_ex2 == 0.0){	
+		valor_ex2 = 0.0;
+		expoente = 0;
+	}
+
+printf("Numero em notacao cientifica: %.3lf x 10^%d\n", valor_ex2, expoente);
+//
+
+
+
+
+	
 
 //ex4
 int valor_d[10], maior_valor;
