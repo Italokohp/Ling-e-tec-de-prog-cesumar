@@ -35,7 +35,7 @@ int primo (int a){
 
 
 int main(int argc, char *argv[]) {
-//ex1
+//ex1 (com erros)
 printf("\n\n#EX1\n");
 int valor_ex1[10], i;
 for (i=0; i<10; i++){
