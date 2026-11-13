@@ -100,20 +100,20 @@ int main(int argc, char *argv[]) {
 
 //ex1
 printf("#EX1\n");
-int valor_ex1[10], i, a;
-for (i=0; i<10; i++){
+int valor_ex1[100], i, a;
+for (i=0; i<100; i++){
 	printf("Insira o numero %d: ", i+1);
 	scanf("%d", &valor_ex1[i]);
 } printf("-----------------------------------------------------\n");
 
-for (i=10; i>0; i--){
+for (i=100; i>0; i--){
 	printf("Numero %d: %d\n", i, valor_ex1[i-1]);
 } printf("-----------------------------------------------------\n");
 
 a = ordenacao(valor_ex1);
 
 
-for (i = 0; i < 10; i++){
+for (i = 0; i < 100; i++){
 	printf("Numero %d: %d\n", i+1, valor_ex1[i] );
 }
 //
@@ -149,8 +149,8 @@ printf("\n\n#EX3\n");
 printf("Digite um numero decimal inteiro (max: 1023): ");
 scanf("%d", &valor_ex3);
 
-if (valor_ex3 > 1023){
-	printf("Valor ultrapassa o num max de 1023\n");
+if (valor_ex3 > 64){
+	printf("Valor ultrapassa o num max de 64\n");
 } else {
 	printf("O numero %d em binario eh: %d\n", valor_ex3, binario_calculo(valor_ex3));
 }
