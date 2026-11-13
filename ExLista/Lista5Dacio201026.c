@@ -1,6 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+
+//
+int ordenacao(int valor_ex1[]) {
+    int a, i, j, aux;
+
+    for (i = 0; i < 9; i++) {
+        for (j = 0; j < 9; j++) {
+            if (valor_ex1[j] < valor_ex1[j + 1]) {
+                aux = valor_ex1[j];
+                valor_ex1[j] = valor_ex1[j + 1];
+                valor_ex1[j + 1] = aux;
+            	a++;
+			}
+        }
+    }
+    
+    return a;
+}
+//
+
+
+
+
+
+
+
 //
 int binario_calculo(int a){
 	int binario = 0, resto, base = 1;
@@ -18,6 +44,8 @@ int binario_calculo(int a){
 
 }
 //
+
+
 
 
 
@@ -48,11 +76,16 @@ int expoente = 0;
 
 
 
+
+
 //
 int maior(int a, int b){
 	return (a+b+abs(a-b))/2;
 }
 //
+
+
+
 
 
 
@@ -69,7 +102,8 @@ int primo (int a){
 		return 0;
 	}
 	
-	for (int i = 2; i <= a/2; i++){
+	int i;
+	for (i = 2; i <= a/2; i++){
 		if (a%i == 0){
 			resultado++;
 			break;
@@ -91,9 +125,9 @@ int primo (int a){
 int main(int argc, char *argv[]) {
 
 
-//ex1 (com erros)
+//ex1
 printf("#EX1\n");
-int valor_ex1[10], i;
+int valor_ex1[10], i, a;
 for (i=0; i<10; i++){
 	printf("Insira o numero %d: ", i+1);
 	scanf("%d", &valor_ex1[i]);
@@ -103,26 +137,13 @@ for (i=10; i>0; i--){
 	printf("Numero %d: %d\n", i, valor_ex1[i-1]);
 } printf("-----------------------------------------------------\n");
 
-for (i=10; i>0; i=i-2){
-	double aux;
-	if (valor_ex1[i] > valor_ex1[i+1]){
-		aux = valor_ex1[i+1];
-		valor_ex1[i+1] = valor_ex1[i];
-		valor_ex1[i] = aux;
-	}
-	else if (valor_ex1[i+1] > valor_ex1[i]){
-		aux = valor_ex1[i];
-		valor_ex1[i] = valor_ex1[i+1];
-		valor_ex1[i+1] = aux;
-	}
-	printf("Numero %d: %d\nNumero %d: %d\n", i, valor_ex1[i], i-1, valor_ex1[i+1]);
+a = ordenacao(valor_ex1);
 
+
+for (i = 0; i < 10; i++){
+	printf("Numero %d: %d\n", i+1, valor_ex1[i] );
 }
 //
-
-
-
-
 
 
 
