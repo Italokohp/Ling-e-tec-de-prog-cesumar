@@ -1,11 +1,62 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+//
+int binario_calculo(int a){
+	int binario = 0, resto, base = 1;
+	if (a == 0) {
+        return 0;
+    } else {
+        while (a > 0) {
+            resto = a % 2;
+            binario = binario + resto * base;
+            base = base * 10;
+            a = a / 2;
+        } 
+        return binario;
+    }
 
+}
+//
+
+
+
+
+
+
+//
+int notacao_cientifica(double aa, double *resultadoa, int *resultadob){
+int expoente = 0;
+	while (aa >= 10.0){
+		aa = aa/10.0;
+		expoente++;
+	}
+	while (aa < 1.0){
+		aa = aa*10.0;
+		expoente--;
+	}
+	if (aa == 0.0){	
+		aa = 0.0;
+		expoente = 0;
+	}
+
+     *resultadoa = aa;
+     *resultadob = expoente;
+}
+//
+
+
+
+
+//
 int maior(int a, int b){
 	return (a+b+abs(a-b))/2;
 }
+//
 
+
+
+//
 int par (int a){
 	if (a %2 == 0){
 		return 1;
@@ -28,15 +79,20 @@ int primo (int a){
 		return 1;
 	} else return 0;
 }
+//
 
 
 
 
 
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 int main(int argc, char *argv[]) {
+
+
 //ex1 (com erros)
-printf("\n\n#EX1\n");
+printf("#EX1\n");
 int valor_ex1[10], i;
 for (i=0; i<10; i++){
 	printf("Insira o numero %d: ", i+1);
@@ -66,45 +122,56 @@ for (i=10; i>0; i=i-2){
 
 
 
-	
+
+
+
+
+
 //ex2
 printf("\n\n#EX2\n");
-double valor_ex2;
-int expoente = 0;
+int expoente;
+double valor_ex2, valor_novo;
 printf("Insira um valor para ser convertido em notacao cientifica: ");
 scanf("%lf", &valor_ex2);
 
-	
-	while (valor_ex2 >= 10.0){
-		valor_ex2 = valor_ex2/10.0;
-		expoente++;
-	}
-	while (valor_ex2 < 1.0){
-		valor_ex2 = valor_ex2*10.0;
-		expoente--;
-	}
-	if (valor_ex2 == 0.0){	
-		valor_ex2 = 0.0;
-		expoente = 0;
-	}
+notacao_cientifica(valor_ex2, &valor_novo, &expoente);
 
-printf("Numero em notacao cientifica: %.3lf x 10^%d\n", valor_ex2, expoente);
+printf("Numero em notacao cientifica: %.3lf x 10^%d\n", valor_novo, expoente);
 //
 
 
 
 
-	
+
+
+//ex3
+int valor_ex3;
+printf("\n\n#EX3\n");
+printf("Digite um numero decimal inteiro (max: 1023): ");
+scanf("%d", &valor_ex3);
+
+if (valor_ex3 > 1023){
+	printf("Valor ultrapassa o num max de 1023\n");
+} else {
+	printf("O numero %d em binario eh: %d\n", valor_ex3, binario_calculo(valor_ex3));
+}
+//
+
+
+
+
+
+
 
 //ex4
-int valor_d[10], maior_valor;
-printf("#EX4\n");
+int valor_ex4[10], maior_valor;
+printf("\n\n#EX4\n");
 for(i=0; i<10; i++){
-	printf("Insira o numero: ");
-	scanf("%d", &valor_d[i]);
+	printf("Insira o %d numero: ", i+1);
+	scanf("%d", &valor_ex4[i]);
 }
-for (i=0, maior_valor = valor_d[i]; i<10; i++){
-	maior_valor = maior(maior_valor, valor_d[i]);
+for (i=0, maior_valor = valor_ex4[i]; i<10; i++){
+	maior_valor = maior(maior_valor, valor_ex4[i]);
 }	
 printf("%d eh o maior\n\n", maior_valor);	
 //
@@ -112,9 +179,12 @@ printf("%d eh o maior\n\n", maior_valor);
 
 
 
+
+
+
 //ex5
 int vetor_ex5[100];
-printf("#EX5#\n");
+printf("\n\n#EX5\n");
 for (i=0; i<100; i++){
 	printf("Ensira o %d numero: ", i+1);
 	scanf("%d", &vetor_ex5[i]);
@@ -139,8 +209,5 @@ for (i=0; i<100; i++){
 }
 //
 
-	
-	
-	
 	return 0;
 }
