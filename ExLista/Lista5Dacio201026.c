@@ -51,33 +51,6 @@ int binario_calculo(int a){
 
 
 
-
-//
-int notacao_cientifica(double aa, double *resultadoa, int *resultadob){
-int expoente = 0;
-	while (aa >= 10.0){
-		aa = aa/10.0;
-		expoente++;
-	}
-	while (aa < 1.0){
-		aa = aa*10.0;
-		expoente--;
-	}
-	if (aa == 0.0){	
-		aa = 0.0;
-		expoente = 0;
-	}
-
-     *resultadoa = aa;
-     *resultadob = expoente;
-}
-//
-
-
-
-
-
-
 //
 int maior(int a, int b){
 	return (a+b+abs(a-b))/2;
@@ -151,14 +124,19 @@ for (i = 0; i < 10; i++){
 //ex2
 printf("\n\n#EX2\n");
 int expoente;
-double valor_ex2, valor_novo;
+double valor_ex2;
 printf("Insira um valor para ser convertido em notacao cientifica: ");
 scanf("%lf", &valor_ex2);
 
-notacao_cientifica(valor_ex2, &valor_novo, &expoente);
+float valor_novoex2 = valor_ex2;
 
-printf("Numero em notacao cientifica: %.3lf x 10^%d\n", valor_novo, expoente);
+do{valor_novoex2 = valor_novoex2/10;
+expoente++;
+} while(valor_novoex2 > 10);
+
+printf("Numero em notacao cientifica: %.3lf x 10^%d\n", valor_novoex2, expoente);
 //
+
 
 
 
